@@ -2,30 +2,37 @@ package integrationproject;
 
 public class BasicEncryption extends Encryption {
 
-	private boolean debug  = false; //Three or more different data types (1)
-	
+	private boolean debug  = false;
+	//Overloaded constructors 
+	public BasicEncryption() {
+		
+	}
+	public BasicEncryption(boolean debug) {
+		this.debug = debug;
+	}
 	public String encrypt(String message) {
-		String encryptedMessage = ""; //Three or more different data types (1)
+		String encryptedMessage = "";
 		for (int i = 0; i < message.length(); i++) {
-			char current = message.charAt(i); //Three or more different data types (1)
+			char current = message.charAt(i);
 			if (current != ' ')
-				current += (char)key; //Manipulate primitive numeric data and string data
+				current += (char)key;
 			encryptedMessage += current;
 		}
-		if (debug)inspect(encryptedMessage);
+		if (debug)inspectToArray(encryptedMessage);
 		return encryptedMessage;
 	}
 
 	public String decrypt(String message) {
 		String decryptedMessage = "";
 		for (int i = 0; i < message.length(); i++) {
-			char current = message.charAt(i); //Manipulate text using methods of the String class
-			if (current != ' ') current -= (char)key; //Use casting without losing precision
+			char current = message.charAt(i);
+			if (current != ' ') current -= (char)key;
 			decryptedMessage += current;
 		}
-		if (debug)inspect(decryptedMessage);
+		if (debug)inspectToArray(decryptedMessage);
 		return decryptedMessage;
 	}
+	
 
 	public void setDebug(boolean debug) {
 		this.debug = debug;

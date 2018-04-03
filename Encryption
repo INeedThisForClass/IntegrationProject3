@@ -1,9 +1,5 @@
 package integrationproject;
 
-public class BasicEncryption extends Encryption {
-
-package integrationproject;
-
 import java.util.Random;
 
 public abstract class Encryption {
@@ -41,4 +37,3 @@ public abstract class Encryption {
 	}
 
 }
-

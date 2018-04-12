@@ -11,7 +11,10 @@ public class BasicEncryption extends Encryption {
 		this.debug = debug;
 	}
 	//This method is overriden from the superclass (Encryption)
-	//Polymorphism
+	/*Polymorphism because this class (BasicEncryption) 'is a' form of Encryption. This allows us to perform the same action
+	(Encrypt/Decrypt) in a different way, for instance if we had another version of an Encryption class, it could also use
+	these method to encrypt/decrypt in its own way
+	*/
 	@Override
 	public String encrypt(String message) {
 		String encryptedMessage = "";
@@ -25,7 +28,6 @@ public class BasicEncryption extends Encryption {
 		return encryptedMessage;
 	}
 	//This method is also overriden from the superclass (Encryption)
-	//Polymorphism
 	@Override
 	public String decrypt(String message) {
 		String decryptedMessage = "";

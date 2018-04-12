@@ -7,6 +7,7 @@ public abstract class Encryption {
 	protected static Random random = new Random(); //Static field
 	protected int key = random.nextInt(4) + 2;
 
+	//these two methods are overriden in the subclass
 	public abstract String encrypt(String message);
 
 	public abstract String decrypt(String message);

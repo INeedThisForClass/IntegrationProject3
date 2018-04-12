@@ -7,9 +7,8 @@ public abstract class Encryption {
 	protected static Random random = new Random(); //Static field
 	protected int key = random.nextInt(4) + 2;
 
-	//these two methods are overriden in the subclass
+	//these two methods are defined and overriden in the subclass
 	public abstract String encrypt(String message);
-
 	public abstract String decrypt(String message);
 
 	public int getKey() {
@@ -25,7 +24,7 @@ public abstract class Encryption {
 		System.out.print("encryption shift: " + key + ", ");
 		System.out.print("text length: " + message.length() + ", ");
 		System.out.print("chars: ");
-		for (int i = 0; i < message.length(); i++) {//Write java code that uses loop constructs
+		for (int i = 0; i < message.length(); i++) {
 		if (message.charAt(i) != ' ')
 		System.out.print(String.valueOf(message.charAt(i)));
 		}
@@ -33,8 +32,8 @@ public abstract class Encryption {
 		System.out.println("--------------------------------");
 	}
 	
-	public static void inspectToArray(String message) { //Static methods
-		char[] chars = new char[message.length()]; //Write java code that uses arrays
+	public static void inspectToArray(String message) {
+		char[] chars = new char[message.length()]; 
 		for (int i = 0; i < chars.length; i++) {
 			chars[i] = message.charAt(i);
 		}
@@ -47,6 +46,20 @@ public abstract class Encryption {
 		StringBuilder sb = new StringBuilder(message); //Use methods of the StringBuilder class
 		sb.replace(start, end, newMessage);
 	}
-
+	
+	//Checked Exception found
+	public Char getCharAt(String message, int index) {
+		try {
+			return message.get(index);
+		} catch(IndexOutOfBoundsException e) {
+			System.out.println("Please try again, the index is not within boundaries" + e.getMessage());
+		}
+	}
+	
+	public void getTime() {
+		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+		Date dateobj = new Date();
+		System.out.println(df.format(dateobj));
+	}
 
 }

@@ -11,6 +11,8 @@ public class BasicEncryption extends Encryption {
 		this.debug = debug;
 	}
 	//This method is overriden from the superclass (Encryption)
+	//Polymorphism
+	@Override
 	public String encrypt(String message) {
 		String encryptedMessage = "";
 		for (int i = 0; i < message.length(); i++) {
@@ -23,6 +25,8 @@ public class BasicEncryption extends Encryption {
 		return encryptedMessage;
 	}
 	//This method is also overriden from the superclass (Encryption)
+	//Polymorphism
+	@Override
 	public String decrypt(String message) {
 		String decryptedMessage = "";
 		for (int i = 0; i < message.length(); i++) {

@@ -9,7 +9,7 @@ public class Main {
 		System.out.println("Author: Romanov Andre");
 		System.out.println("Last Edit: 04-03-18");
 
-		BasicEncryption basic = new BasicEncryption();
+		Encryption basic = new BasicEncryption();
 		Scanner input = new Scanner(System.in);
 		int choice = 0;
 

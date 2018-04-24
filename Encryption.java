@@ -47,7 +47,10 @@ public abstract class Encryption {
 		sb.replace(start, end, newMessage);
 	}
 	
-	//Checked Exception found
+	/*PSI 3 Requirement
+	  In this method an IndexOutOfBoundsException is caught if the index chosen is smaller than zero or greater and equal to size
+	  of the array
+	  Checked Exception */
 	public Char getCharAt(String message, int index) {
 		try {
 			return message.get(index);

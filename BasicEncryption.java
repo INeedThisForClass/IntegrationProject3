@@ -1,6 +1,9 @@
 package integrationproject;
 
 public class BasicEncryption extends Encryption {
+	/*PSI 3 Requirement
+	  BasicEncryption and Encryption represents a class hierarchy since Encryption is the building block of every encryption
+	  BasicEncryption represents a form of encryption, which is all possible because BasicEncryption extends Encryption.*/
 
 	private boolean debug  = false;
 	//Overloaded constructors 
@@ -10,11 +13,11 @@ public class BasicEncryption extends Encryption {
 	public BasicEncryption(boolean debug) {
 		this.debug = debug;
 	}
-	//This method is overriden from the superclass (Encryption)
-	/*Polymorphism because this class (BasicEncryption) 'is a' form of Encryption. This allows us to perform the same action
-	(Encrypt/Decrypt) in a different way, for instance if we had another version of an Encryption class, it could also use
-	these method to encrypt/decrypt in its own way
-	*/
+	/*PSI 3 Requirement
+	  The two methods below are overriden from the superclass (Encryption)
+	  Polymorphism because this class (BasicEncryption) 'is a' form of Encryption. This allows us to perform the same action
+	  (Encrypt/Decrypt) in a different way, for instance if we had another version of an Encryption class, it could also use
+	  these method to encrypt/decrypt in its own way*/
 	@Override
 	public String encrypt(String message) {
 		String encryptedMessage = "";
@@ -27,7 +30,6 @@ public class BasicEncryption extends Encryption {
 		if (debug)inspectToArray(encryptedMessage);
 		return encryptedMessage;
 	}
-	//This method is also overriden from the superclass (Encryption)
 	@Override
 	public String decrypt(String message) {
 		String decryptedMessage = "";

@@ -1,6 +1,10 @@
 package integrationproject;
 
 import java.util.Random;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public abstract class Encryption {
 
@@ -47,10 +51,6 @@ public abstract class Encryption {
 		sb.replace(start, end, newMessage);
 	}
 	
-	/*PSI 3 Requirement
-	  In this method an IndexOutOfBoundsException is caught if the index chosen is smaller than zero or greater and equal to size
-	  of the array
-	  Checked Exception */
 	public Char getCharAt(String message, int index) {
 		try {
 			return message.get(index);
@@ -58,7 +58,9 @@ public abstract class Encryption {
 			System.out.println("Please try again, the index is not within boundaries" + e.getMessage());
 		}
 	}
-	
+	/*PSI 3 Requirement
+	  These three classes allow us to print out the date and the current time
+	*/
 	public void getTime() {
 		DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 		Date dateobj = new Date();
